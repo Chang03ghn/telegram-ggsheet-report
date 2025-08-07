@@ -2,7 +2,7 @@ name: Daily Telegram Report
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # Chạy lúc 11h40 trưa giờ Việt Nam (4h40 UTC)
+    - cron: '50 6 * * *'   # Chạy lúc 11h40 trưa giờ Việt Nam (4h40 UTC)
   workflow_dispatch:      # Cho phép chạy thủ công từ GitHub
 
 jobs:
