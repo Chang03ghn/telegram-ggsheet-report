@@ -2,8 +2,8 @@ name: Daily Telegram Report
 
 on:
   schedule:
-    - cron: '30 8 * * *' # Chạy lúc 11h40 trưa giờ Việt Nam (4h40 UTC)
-  workflow_dispatch:      # Cho phép chạy thủ công từ GitHub
+    - cron: '0 10 * * *'  # Chạy lúc 17h00 giờ Việt Nam (10h00 UTC)
+  workflow_dispatch:       # Cho phép chạy thủ công từ GitHub
 
 jobs:
   run-script:
@@ -23,6 +23,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libgtk-3-dev
           pip install -r requirements.txt
+
+      - name: Log UTC time (check cron)
+        run: date -u
 
       - name: Run script
         env:
